@@ -4,11 +4,19 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MonkeysMVVM.Views"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Disabled"
+    >
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MonkeysPage}"
         Route="MainPage" />
+    <TabBar Shell.TabBarBackgroundColor="CadetBlue">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:MonkeyPage}"
+            Icon="dotnet_bot"
+            <ShellContent Title="בית" ContentTemplate="{}"/>
+
+    </TabBar>
 
 </Shell>
