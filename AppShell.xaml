@@ -4,19 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MonkeysMVVM.Views"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
     >
-
-    <ShellContent
+    <TabBar Shell.TabBarUnselectedColor="CadetBlue">
+        <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MonkeysPage}"
         Route="MainPage" />
-    <TabBar Shell.TabBarBackgroundColor="CadetBlue">
+        <Tab Icon="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"/>
         <ShellContent
-            ContentTemplate="{DataTemplate local:MonkeyPage}"
-            Icon="dotnet_bot"
-            <ShellContent Title="בית" ContentTemplate="{}"/>
-
+             Title="סינון"
+             ContentTemplate="{DataTemplate local:MonkeysPage}"/>
     </TabBar>
-
+    <FlyoutItem Title="Home" FlyoutDisplayOptions="AsMultipleItems" Icon="home.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MonkeysPage}" Icon="home.png" Route="MainPage"/>
+        <ShellContent Title="סינון" ContentTemplate="{DataTemplate local:FindMonkeyByLocationPage}" Icon="serach.png"/>
+    </FlyoutItem>
 </Shell>
